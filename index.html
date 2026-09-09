@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EcoLuz IRTRA — Iluminación inteligente de senderos</title>
+<!-- EDITAR: este es el ícono que aparece en la pestaña del navegador (favicon).
+     Sube tu propia imagen cuadrada (idealmente .png de 32x32 o 64x64 px) a esta ruta. -->
+<link rel="icon" type="image/png" href="recursos/imagenes/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -365,6 +368,23 @@
   }
   .media-card h3{ font-size: 1.05rem; }
 
+  /* Tarjeta del PDF ocupa el ancho completo, para que se lea cómodo */
+  .pdf-card{ grid-column: 1 / -1; }
+  .pdf-marco{
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--linea);
+    background: var(--bg-noche);
+  }
+  .pdf-marco iframe{
+    width: 100%;
+    height: 520px;
+    border: none;
+    display: block;
+  }
+
   /* ---------- FOOTER ---------- */
   footer{
     padding: 3rem 6vw;
@@ -390,9 +410,8 @@
 <nav>
   <div class="logo">EcoLuz <span>IRTRA</span></div>
   <div class="nav-links">
-    <a href="#proyecto">Proyecto</a>
     <a href="#equipo">Equipo</a>
-    <a href="#sistema">Sistema</a>
+    <a href="#infografia">Infografía</a>
     <a href="#circuito">Circuito</a>
     <a href="#multimedia">Multimedia</a>
   </div>
@@ -411,7 +430,7 @@
         consumo energético sin sacrificar seguridad.
       </p>
       <div class="hero-ctas">
-        <a href="#sistema" class="btn btn-principal">Ver cómo funciona</a>
+        <a href="#infografia" class="btn btn-principal">Ver cómo funciona</a>
         <!-- EDITAR: pon aquí el link real de tu repositorio -->
         <a href="https://github.com/TU-USUARIO/TU-REPOSITORIO" class="btn btn-secundario" target="_blank">Ver en GitHub</a>
       </div>
@@ -451,49 +470,12 @@
 
 <hr class="linea-divisoria">
 
-<!-- =================== PROYECTO / RESUMEN / ODS =================== -->
-<section id="proyecto">
-  <div class="contenedor">
-    <div class="kicker">El proyecto</div>
-    <h2>Resumen y justificación</h2>
-    <p style="max-width: 75ch;">
-      <!-- EDITAR: pega aquí el resumen ejecutivo de tu proyecto (2-4 párrafos) -->
-      IRTRA Petapa mantiene encendida la iluminación de sus senderos durante toda
-      la noche, sin importar si hay visitantes circulando o no. EcoLuz IRTRA
-      propone un sistema que combina un sensor de luz (LDR) y un sensor de
-      movimiento (PIR) para regular automáticamente la intensidad de las
-      luminarias: apagadas de día, en modo de bajo consumo cuando está oscuro
-      pero no hay nadie, y a brillo total cuando una persona se acerca.
-    </p>
-
-    <div class="ods-lista">
-      <div class="ods-card">
-        <div class="ods-num">ODS 7</div>
-        <div>
-          <!-- EDITAR: nombre y justificación del ODS -->
-          <strong>Energía asequible y no contaminante</strong>
-          <p>El sistema reduce el consumo energético al iluminar solo cuando es necesario.</p>
-        </div>
-      </div>
-      <div class="ods-card">
-        <div class="ods-num">ODS 12</div>
-        <div>
-          <strong>Producción y consumo responsables</strong>
-          <p>Evita el desperdicio de energía eléctrica en horarios de bajo tránsito.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="linea-divisoria">
-
 <!-- =================== EQUIPO =================== -->
 <section id="equipo">
   <div class="contenedor">
     <div class="kicker">Quiénes lo hicimos</div>
     <h2>El equipo</h2>
-
+    <p>Reemplaza el avatar y el nombre de cada integrante.</p>
 
     <div class="equipo-grid">
       <!-- EDITAR: repite esta tarjeta por cada integrante (usualmente 3) -->
@@ -502,20 +484,20 @@
           <!-- Reemplaza esto por: <img src="avatar1.png" alt="Nombre"> -->
           BE
         </div>
-        <h3>Rebeca Isabela Illescas Díaz</h3>
-        <div class="rol">Diseñadora de Multimediao</div>
+        <h3>Nombre del integrante</h3>
+        <div class="rol">Rol en el proyecto</div>
       </div>
 
       <div class="persona-card">
         <div class="avatar">NN</div>
-        <h3>María Alejandra Zapeta Molina</h3>
-        <div class="rol">Investigadora y Redactora</div>
+        <h3>Nombre del integrante</h3>
+        <div class="rol">Rol en el proyecto</div>
       </div>
 
       <div class="persona-card">
         <div class="avatar">NN</div>
-        <h3>Ana Belén Morales Martínez</h3>
-        <div class="rol">Ingenieroa de Circuito y Formato </div>
+        <h3>Nombre del integrante</h3>
+        <div class="rol">Rol en el proyecto</div>
       </div>
     </div>
   </div>
@@ -523,21 +505,16 @@
 
 <hr class="linea-divisoria">
 
-<!-- =================== SISTEMA / MATERIALES =================== -->
-<section id="sistema">
+<!-- =================== INFOGRAFÍA =================== -->
+<section id="infografia">
   <div class="contenedor">
-    <div class="kicker">Bajo el capó</div>
-    <h2>Materiales y estado del sistema</h2>
-    <p>Edita el arreglo <code>materiales</code> dentro del &lt;script&gt; al final del archivo para cambiar esta tabla sin tocar HTML.</p>
+    <div class="kicker">Resumen ejecutivo</div>
+    <h2>Infografía del proyecto</h2>
+    <p>Resumen, justificación, ODS, materiales y estado del sistema — todo consolidado en la infografía.</p>
 
-    <table>
-      <thead>
-        <tr><th>Componente</th><th>Función en el circuito</th><th>Estado</th></tr>
-      </thead>
-      <tbody id="tabla-materiales">
-        <!-- Esta tabla se llena automáticamente desde JavaScript, ver el <script> al final -->
-      </tbody>
-    </table>
+    <div class="circuito-marco">
+      <img src="recursos/imagenes/infografia.png" alt="Infografía del proyecto EcoLuz IRTRA">
+    </div>
   </div>
 </section>
 
@@ -551,9 +528,7 @@
     <p>Sustituye este bloque por una captura legible de tu circuito ya armado.</p>
 
     <div class="circuito-marco">
-      <!-- EDITAR: cuando tengas tu captura, reemplaza el div de abajo por:
-           <img src="circuito.png" alt="Circuito EcoLuz IRTRA en Tinkercad"> -->
-      <div class="placeholder-img">📷 Coloca aquí tu captura de Tinkercad (circuito.png)</div>
+      <img src="recursos/imagenes/capturatinkercad.png" alt="Circuito EcoLuz IRTRA en Tinkercad">
     </div>
   </div>
 </section>
@@ -573,11 +548,16 @@
         <!-- EDITAR: pon aquí el link real de tu podcast -->
         <a href="#" class="btn btn-principal" target="_blank">Escuchar podcast</a>
       </div>
-      <div class="media-card">
-        <h3>💻 Repositorio en GitHub</h3>
-        <p>Código fuente, documentación y recursos completos del proyecto.</p>
-        <!-- EDITAR: pon aquí el link real de tu repositorio -->
-        <a href="https://github.com/TU-USUARIO/TU-REPOSITORIO" class="btn btn-secundario" target="_blank">Ir a GitHub</a>
+      <div class="media-card pdf-card">
+        <h3>📄 Documento de Investigación</h3>
+        <p>Consulta aquí mismo el informe completo, sin necesidad de descargarlo.</p>
+        <div class="pdf-marco">
+          <!-- EDITAR: reemplaza la ruta por la ubicación real de tu PDF dentro del repositorio -->
+          <iframe src="recursos/documentos/investigacion.pdf" title="Documento Formal de Investigación EcoLuz IRTRA"></iframe>
+        </div>
+        <a href="recursos/documentos/investigacion.pdf" target="_blank" class="btn btn-secundario" style="margin-top:1rem;">
+          Abrir en pestaña completa
+        </a>
       </div>
     </div>
   </div>
@@ -589,29 +569,6 @@
 </footer>
 
 <script>
-  /* =========================================================
-     MATERIALES — edita este arreglo para cambiar la tabla
-     de componentes sin tocar el HTML de arriba.
-     estado: "funciona" o "no-funciona"
-  ========================================================= */
-  const materiales = [
-    { nombre: "Arduino Uno R3",        funcion: "Microcontrolador principal del sistema",       estado: "funciona" },
-    { nombre: "Sensor PIR",            funcion: "Detecta movimiento de personas en el sendero", estado: "funciona" },
-    { nombre: "Fotorresistencia (LDR)",funcion: "Mide el nivel de luz ambiental",                estado: "funciona" },
-    { nombre: "LEDs blancos (x2)",     funcion: "Simulan las luminarias del sendero, con brillo regulable (PWM)", estado: "funciona" },
-    { nombre: "Buzzer",                funcion: "Emite un aviso sonoro al detectar movimiento nuevo", estado: "funciona" },
-    { nombre: "Resistencias",          funcion: "Protegen los LEDs y forman el divisor de voltaje del LDR", estado: "funciona" },
-  ];
-
-  const tbody = document.getElementById('tabla-materiales');
-  materiales.forEach(m => {
-    const fila = document.createElement('tr');
-    const clase = m.estado === "funciona" ? "funciona" : "no-funciona";
-    const texto = m.estado === "funciona" ? "Funciona" : "No funciona";
-    fila.innerHTML = `<td>${m.nombre}</td><td>${m.funcion}</td><td><span class="estado ${clase}">${texto}</span></td>`;
-    tbody.appendChild(fila);
-  });
-
   /* =========================================================
      SIMULADOR INTERACTIVO — replica la lógica real de tu código
      Arduino: de día todo apagado, de noche en standby, y a
